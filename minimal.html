@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"> 
+		
+		<title>Debug Tone.js Sampler on Safari</title>
+
+		<script type="text/javascript" src="tone.min.js"></script>
+		<script type="text/javascript">
+sampler = new Tone.Sampler( {
+	'A': 'bass.mp3'
+} ).toMaster();			
+
+Tone.Buffer.on( 'load', function() {
+	sampler.triggerAttack( 'A' );
+} );		
+		</script>
+	</head>
+	<body id="body">
+		The loop doesn't start in Safari (Max OS) on first load.
+	</body>
+</html>
